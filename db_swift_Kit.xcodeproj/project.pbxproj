@@ -12,12 +12,14 @@
 		180B4A3422A209C200399C14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180B4A3222A209C200399C14 /* Main.storyboard */; };
 		180B4A3622A209C300399C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180B4A3522A209C300399C14 /* Assets.xcassets */; };
 		180B4A3922A209C300399C14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180B4A3722A209C300399C14 /* LaunchScreen.storyboard */; };
-		180B4A4522A20BE500399C14 /* DBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B4A4422A20BE500399C14 /* DBTabBarController.swift */; };
 		180B4A4722A230C700399C14 /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B4A4622A230C700399C14 /* AViewController.swift */; };
 		180B4A4922A230D000399C14 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B4A4822A230D000399C14 /* BViewController.swift */; };
-		180B4A4B22A3779300399C14 /* DBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B4A4A22A3779300399C14 /* DBNavigationController.swift */; };
-		180B4A4D22A96DE900399C14 /* DBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B4A4C22A96DE900399C14 /* DBBaseViewController.swift */; };
 		180B4A4F22A973DF00399C14 /* CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B4A4E22A973DF00399C14 /* CViewController.swift */; };
+		87ED6F3B22ADDAC4009647C9 /* DBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED6F3722ADDAC4009647C9 /* DBNavigationController.swift */; };
+		87ED6F3C22ADDAC4009647C9 /* DBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED6F3822ADDAC4009647C9 /* DBTabBarController.swift */; };
+		87ED6F3D22ADDAC4009647C9 /* DBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED6F3922ADDAC4009647C9 /* DBBaseViewController.swift */; };
+		87ED6F3F22ADDAF5009647C9 /* EquipmentInfoTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED6F3E22ADDAF5009647C9 /* EquipmentInfoTools.swift */; };
+		87ED6F4122AE04AB009647C9 /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED6F4022AE04AB009647C9 /* TableViewHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +30,14 @@
 		180B4A3522A209C300399C14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		180B4A3822A209C300399C14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		180B4A3A22A209C300399C14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		180B4A4422A20BE500399C14 /* DBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTabBarController.swift; sourceTree = "<group>"; };
 		180B4A4622A230C700399C14 /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
 		180B4A4822A230D000399C14 /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
-		180B4A4A22A3779300399C14 /* DBNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBNavigationController.swift; sourceTree = "<group>"; };
-		180B4A4C22A96DE900399C14 /* DBBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBBaseViewController.swift; sourceTree = "<group>"; };
 		180B4A4E22A973DF00399C14 /* CViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CViewController.swift; sourceTree = "<group>"; };
+		87ED6F3722ADDAC4009647C9 /* DBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBNavigationController.swift; sourceTree = "<group>"; };
+		87ED6F3822ADDAC4009647C9 /* DBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBTabBarController.swift; sourceTree = "<group>"; };
+		87ED6F3922ADDAC4009647C9 /* DBBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBBaseViewController.swift; sourceTree = "<group>"; };
+		87ED6F3E22ADDAF5009647C9 /* EquipmentInfoTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentInfoTools.swift; sourceTree = "<group>"; };
+		87ED6F4022AE04AB009647C9 /* TableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,20 +70,46 @@
 		180B4A2D22A209C200399C14 /* db_swift_Kit */ = {
 			isa = PBXGroup;
 			children = (
+				87ED6F3522ADDAC4009647C9 /* Category */,
+				87ED6F3622ADDAC4009647C9 /* Main */,
+				87ED6F3A22ADDAC4009647C9 /* Tools */,
 				180B4A2E22A209C200399C14 /* AppDelegate.swift */,
 				180B4A3022A209C200399C14 /* ViewController.swift */,
-				180B4A4422A20BE500399C14 /* DBTabBarController.swift */,
-				180B4A4A22A3779300399C14 /* DBNavigationController.swift */,
 				180B4A4622A230C700399C14 /* AViewController.swift */,
 				180B4A4822A230D000399C14 /* BViewController.swift */,
 				180B4A4E22A973DF00399C14 /* CViewController.swift */,
-				180B4A4C22A96DE900399C14 /* DBBaseViewController.swift */,
 				180B4A3222A209C200399C14 /* Main.storyboard */,
 				180B4A3522A209C300399C14 /* Assets.xcassets */,
 				180B4A3722A209C300399C14 /* LaunchScreen.storyboard */,
 				180B4A3A22A209C300399C14 /* Info.plist */,
 			);
 			path = db_swift_Kit;
+			sourceTree = "<group>";
+		};
+		87ED6F3522ADDAC4009647C9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		87ED6F3622ADDAC4009647C9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				87ED6F3722ADDAC4009647C9 /* DBNavigationController.swift */,
+				87ED6F3822ADDAC4009647C9 /* DBTabBarController.swift */,
+				87ED6F3922ADDAC4009647C9 /* DBBaseViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		87ED6F3A22ADDAC4009647C9 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				87ED6F3E22ADDAF5009647C9 /* EquipmentInfoTools.swift */,
+				87ED6F4022AE04AB009647C9 /* TableViewHelper.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,14 +184,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180B4A4D22A96DE900399C14 /* DBBaseViewController.swift in Sources */,
+				87ED6F3C22ADDAC4009647C9 /* DBTabBarController.swift in Sources */,
 				180B4A4722A230C700399C14 /* AViewController.swift in Sources */,
+				87ED6F3B22ADDAC4009647C9 /* DBNavigationController.swift in Sources */,
+				87ED6F4122AE04AB009647C9 /* TableViewHelper.swift in Sources */,
 				180B4A4F22A973DF00399C14 /* CViewController.swift in Sources */,
-				180B4A4B22A3779300399C14 /* DBNavigationController.swift in Sources */,
+				87ED6F3F22ADDAF5009647C9 /* EquipmentInfoTools.swift in Sources */,
 				180B4A3122A209C200399C14 /* ViewController.swift in Sources */,
+				87ED6F3D22ADDAC4009647C9 /* DBBaseViewController.swift in Sources */,
 				180B4A2F22A209C200399C14 /* AppDelegate.swift in Sources */,
 				180B4A4922A230D000399C14 /* BViewController.swift in Sources */,
-				180B4A4522A20BE500399C14 /* DBTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,14 +340,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BCE6JQD32N;
 				INFOPLIST_FILE = db_swift_Kit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cyan.db-swift-Kit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -325,14 +359,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BCE6JQD32N;
 				INFOPLIST_FILE = db_swift_Kit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cyan.db-swift-Kit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

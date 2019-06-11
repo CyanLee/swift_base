@@ -8,22 +8,25 @@
 
 import UIKit
 
-class AViewController: DBBaseViewController {
+class AViewController: DBBaseViewController,DBPopDataDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         title = "A"
-        equipmentInfo()
         setStatusBarStyleType(type: 1)
         // Do any additional setup after loading the view.
     }
     
-
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        let b = BViewController()
-//        self.navigationController?.pushViewController(b, animated: true)
-        pushClass(className: "BViewController", data: "钊哥要找工作了")
+        let b = BViewController()
+        b.delegate = self
+        self.navigationController?.pushViewController(b, animated: true)
+//        pushClass(className: "BViewController", data: "钊哥要找工作了")
+    }
+    
+    func obtainPopData(popData: Any?) {
+        print(popData as Any)
     }
     
     /*

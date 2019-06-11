@@ -19,9 +19,16 @@ class BViewController: DBBaseViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        let b = CViewController()
+//        self.navigationController?.pushViewController(b, animated: true)
+        
+//        delegate?.obtainPopData(popData: "好热")
+//        popViewControllerSpecified(specifiedVc: "AViewController")
+        
         let b = CViewController()
         self.navigationController?.pushViewController(b, animated: true)
-//        popViewControllerSpecified(specifiedVc: "AViewController")
+
+        
     }
 
     /*

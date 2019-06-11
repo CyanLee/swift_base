@@ -9,17 +9,22 @@
 import UIKit
 
 //反向传值代理
-protocol DBPopDataDelegate:NSObjectProtocol {
+protocol DBPopDataDelegate: NSObjectProtocol {
     //反向传值实现方法
-    func obtainPopData() -> Any?
+    func obtainPopData(popData:Any?)
 }
 
 class DBBaseViewController: UIViewController {
-
+        
     //正向传值带过去的数据
     var pushDat : Any? = nil
-    //反向传值闭包
-    var popDataBlock:((_ popData:Any?) -> Void)?
+    //反向传值带回去的数据
+    var popData : Any? = nil
+    
+    //反向传值代理
+    weak var delegate: DBPopDataDelegate?
+    //反向传值闭包  暂时没有,写框架,感觉代理比较方便
+//    var popDataBlock:((_ popData:Any?) -> Void)?
     
     
     
@@ -112,35 +117,6 @@ class DBBaseViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
-    /// 获取当前版本号
-    ///
-    /// - Returns: app当前版本号
-    func getAppVersion() -> String {
-        let dic = Bundle.main.infoDictionary
-        let appVersion = dic?["CFBundleShortVersionString"]
-        return appVersion as! String
-    }
-    
-    
-    /// 获取设备信息
-    func equipmentInfo() {
-        //设备信息
-        let iosVersion = UIDevice.current.systemVersion //iOS版本
-        let identifierNumber = UIDevice.current.identifierForVendor //设备udid
-        let systemName = UIDevice.current.systemName //设备名称
-        let model = UIDevice.current.model //设备型号
-        let modelName = UIDevice.current.name //设备具体型号
-        let localizedModel = UIDevice.current.localizedModel //设备区域化型号如A1533
-        print("iOS版本：\(iosVersion)")
-        print("设备udid：\(String(describing: identifierNumber))")
-        print("设备名称：\(systemName)")
-        print("设备型号：\(model)")
-        print("设备具体型号：\(modelName)")
-        print("设备区域化型号：\(localizedModel)")
-    }
-    
-    
     /// 修改状态栏颜色
     ///
     /// - Parameter type: 1:为白色 0:黑色
@@ -150,6 +126,14 @@ class DBBaseViewController: UIViewController {
         }else{
             self.navigationController?.navigationBar.barStyle = .black
         }
+    }
+    
+    
+    /// 是否隐藏导航
+    ///
+    /// - Parameter isHidden: true隐藏 fales显示
+    func isHiddenNavi(isHidden: Bool) {
+        navigationController?.isNavigationBarHidden = isHidden
     }
     
 }
