@@ -19,19 +19,44 @@ class TableViewHelper: NSObject,UITableViewDelegate,UITableViewDataSource {
 //    3 var myCloure:MyClosureType?
 //    typedef UITableViewCell* (^WMZCellCallBlock)(NSIndexPath *indexPath,UITableView* tableView,id model);
     
-    //
-    typealias WMZCellCallBlock = (_ indexPath: IndexPath , _ tableView: UITableView) -> UITableViewCell
-    var db_cellBlock : WMZCellCallBlock?
+    //    let dealCell = { (cellBlock: WMZCellCallBlock) -> TableViewHelper in
+    //        return
+    //    }
     
-//    let dealCell = { (cellBlock: WMZCellCallBlock) -> TableViewHelper in
-//        return
-//    }
     
-    func dealCell(cellBlock: @escaping WMZCellCallBlock) -> TableViewHelper {
-        db_cellBlock = cellBlock
+    /*
+        这里是运用了block的传值和回调
+        声明一个block是用来进行 内到外 的回调
+        在声明一个方法进行 外到内 的传值
+     */
+    
+    /// cell样式的回调block(内部->外部)
+    typealias DBCellCallBlock = (_ indexPath: IndexPath , _ tableView: UITableView) -> UITableViewCell
+    var db_CellCellBlock : DBCellCallBlock?
+    
+    /// row个数的回调block(内部->外部)
+    typealias DBRowIndexNumBlock = (_ section: Int) -> Int
+    var db_RowIndexNumBlock : DBRowIndexNumBlock?
+    
+
+    /// cell的传值函数(外部->内部)
+    ///
+    /// - Parameter cellBlock: cell的回调block(内部->外部) 这里就是要调用这个block
+    /// - Returns: TableViewHelper
+    func dealCellCall(callCellBlock: @escaping DBCellCallBlock) -> TableViewHelper {
+        db_CellCellBlock = callCellBlock
         return self
     }
     
+    
+    /// row个数的回调block(内部->外部)
+    ///
+    /// - Parameter sectionIndexNumBlock: 分区个数的回调block(内部->外部)
+    /// - Returns: TableViewHelper
+    func dealRowIndexNum(rowIndexNumBlock: @escaping DBRowIndexNumBlock) -> TableViewHelper {
+        db_RowIndexNumBlock = rowIndexNumBlock
+        return self
+    }
     
     
     init(tableV: UITableView) {
@@ -39,15 +64,17 @@ class TableViewHelper: NSObject,UITableViewDelegate,UITableViewDataSource {
         tableV.delegate = self
         tableV.dataSource = self
         tableView = tableV
-        
     }
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        print(db_RowIndexNumBlock!(section))
+        return db_RowIndexNumBlock!(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return db_cellBlock!(indexPath,tableView)
+        return db_CellCellBlock!(indexPath,tableView)
     }
     
     
