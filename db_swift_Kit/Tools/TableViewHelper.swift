@@ -58,6 +58,9 @@ class TableViewHelper: NSObject,UITableViewDelegate,UITableViewDataSource {
         return self
     }
     
+    deinit {
+        print("没有循环引用")
+    }
     
     init(tableV: UITableView) {
         super.init()

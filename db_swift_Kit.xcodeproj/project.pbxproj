@@ -15,6 +15,13 @@
 		180B4A4722A230C700399C14 /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B4A4622A230C700399C14 /* AViewController.swift */; };
 		180B4A4922A230D000399C14 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B4A4822A230D000399C14 /* BViewController.swift */; };
 		180B4A4F22A973DF00399C14 /* CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B4A4E22A973DF00399C14 /* CViewController.swift */; };
+		871D7D3C22B0D3C4009633BF /* UICollectionView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D7D3522B0D3C4009633BF /* UICollectionView+extension.swift */; };
+		871D7D3D22B0D3C4009633BF /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D7D3622B0D3C4009633BF /* UILabel+extension.swift */; };
+		871D7D3E22B0D3C4009633BF /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D7D3722B0D3C4009633BF /* UIView+extension.swift */; };
+		871D7D3F22B0D3C4009633BF /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D7D3822B0D3C4009633BF /* UIImageView+extension.swift */; };
+		871D7D4022B0D3C4009633BF /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D7D3922B0D3C4009633BF /* UITableView+extension.swift */; };
+		871D7D4122B0D3C4009633BF /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D7D3A22B0D3C4009633BF /* UIButton+extension.swift */; };
+		871D7D4422B0D485009633BF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D7D4322B0D485009633BF /* Const.swift */; };
 		87ED6F3B22ADDAC4009647C9 /* DBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED6F3722ADDAC4009647C9 /* DBNavigationController.swift */; };
 		87ED6F3C22ADDAC4009647C9 /* DBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED6F3822ADDAC4009647C9 /* DBTabBarController.swift */; };
 		87ED6F3D22ADDAC4009647C9 /* DBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED6F3922ADDAC4009647C9 /* DBBaseViewController.swift */; };
@@ -33,6 +40,13 @@
 		180B4A4622A230C700399C14 /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
 		180B4A4822A230D000399C14 /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		180B4A4E22A973DF00399C14 /* CViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CViewController.swift; sourceTree = "<group>"; };
+		871D7D3522B0D3C4009633BF /* UICollectionView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extension.swift"; sourceTree = "<group>"; };
+		871D7D3622B0D3C4009633BF /* UILabel+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
+		871D7D3722B0D3C4009633BF /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		871D7D3822B0D3C4009633BF /* UIImageView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
+		871D7D3922B0D3C4009633BF /* UITableView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
+		871D7D3A22B0D3C4009633BF /* UIButton+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
+		871D7D4322B0D485009633BF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		87ED6F3722ADDAC4009647C9 /* DBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBNavigationController.swift; sourceTree = "<group>"; };
 		87ED6F3822ADDAC4009647C9 /* DBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBTabBarController.swift; sourceTree = "<group>"; };
 		87ED6F3922ADDAC4009647C9 /* DBBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBBaseViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +84,7 @@
 		180B4A2D22A209C200399C14 /* db_swift_Kit */ = {
 			isa = PBXGroup;
 			children = (
-				87ED6F3522ADDAC4009647C9 /* Category */,
+				871D7D3422B0D390009633BF /* Category */,
 				87ED6F3622ADDAC4009647C9 /* Main */,
 				87ED6F3A22ADDAC4009647C9 /* Tools */,
 				180B4A2E22A209C200399C14 /* AppDelegate.swift */,
@@ -86,9 +100,15 @@
 			path = db_swift_Kit;
 			sourceTree = "<group>";
 		};
-		87ED6F3522ADDAC4009647C9 /* Category */ = {
+		871D7D3422B0D390009633BF /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				871D7D3A22B0D3C4009633BF /* UIButton+extension.swift */,
+				871D7D3522B0D3C4009633BF /* UICollectionView+extension.swift */,
+				871D7D3822B0D3C4009633BF /* UIImageView+extension.swift */,
+				871D7D3622B0D3C4009633BF /* UILabel+extension.swift */,
+				871D7D3922B0D3C4009633BF /* UITableView+extension.swift */,
+				871D7D3722B0D3C4009633BF /* UIView+extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -106,6 +126,7 @@
 		87ED6F3A22ADDAC4009647C9 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				871D7D4322B0D485009633BF /* Const.swift */,
 				87ED6F3E22ADDAF5009647C9 /* EquipmentInfoTools.swift */,
 				87ED6F4022AE04AB009647C9 /* TableViewHelper.swift */,
 			);
@@ -188,11 +209,18 @@
 				180B4A4722A230C700399C14 /* AViewController.swift in Sources */,
 				87ED6F3B22ADDAC4009647C9 /* DBNavigationController.swift in Sources */,
 				87ED6F4122AE04AB009647C9 /* TableViewHelper.swift in Sources */,
+				871D7D3E22B0D3C4009633BF /* UIView+extension.swift in Sources */,
+				871D7D4122B0D3C4009633BF /* UIButton+extension.swift in Sources */,
+				871D7D4422B0D485009633BF /* Const.swift in Sources */,
+				871D7D3C22B0D3C4009633BF /* UICollectionView+extension.swift in Sources */,
 				180B4A4F22A973DF00399C14 /* CViewController.swift in Sources */,
 				87ED6F3F22ADDAF5009647C9 /* EquipmentInfoTools.swift in Sources */,
 				180B4A3122A209C200399C14 /* ViewController.swift in Sources */,
+				871D7D3D22B0D3C4009633BF /* UILabel+extension.swift in Sources */,
 				87ED6F3D22ADDAC4009647C9 /* DBBaseViewController.swift in Sources */,
 				180B4A2F22A209C200399C14 /* AppDelegate.swift in Sources */,
+				871D7D4022B0D3C4009633BF /* UITableView+extension.swift in Sources */,
+				871D7D3F22B0D3C4009633BF /* UIImageView+extension.swift in Sources */,
 				180B4A4922A230D000399C14 /* BViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
