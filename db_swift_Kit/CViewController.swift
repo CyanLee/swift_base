@@ -16,18 +16,17 @@ class CViewController: DBBaseViewController/*,UITableViewDelegate,UITableViewDat
         title = "C"
         
         let tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), style: .plain)
-//        tableView.delegate = self
-//        tableView.dataSource = self
-        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         view.addSubview(tableView)
-        tableView.makeConfigureHelper().dealRowIndexNum { (Int) -> Int in
+        tableView.makeConfigureHelper().dealRowIndexNum { (Int, UITableView) -> Int in
             return 2
-        }.dealCellCall { (IndexPath, UITableView) -> UITableViewCell in
+        }.dealCellCall { (UITableView, IndexPath) -> UITableViewCell in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: IndexPath)
                 cell.textLabel?.text = "1"
                 return cell
-        }
+        }.dealSectionIndexNum { (UITableView) -> Int in
+                return 1
+        }.start()
         
         
 //        TableViewHelper.init(tableV: tableView).dealRowIndexNum { (Int) -> Int in

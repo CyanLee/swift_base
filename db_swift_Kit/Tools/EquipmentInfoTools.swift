@@ -5,7 +5,7 @@
 //  Created by 管家人 on 2019/6/10.
 //  Copyright © 2019 cyan. All rights reserved.
 //  设备信息,在当前类中你可以获得当前设备的一些基本信息
-//  当前app的信息
+//  当前设备的信息 && 当前app信息
 
 import UIKit
 
