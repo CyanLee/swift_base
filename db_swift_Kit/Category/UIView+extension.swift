@@ -10,6 +10,39 @@ import UIKit
 
 extension UIView {
     
+    
+    /// xib实例化圆角
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    
+    /// xib实例化边框宽度
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue > 0 ? newValue : 0
+        }
+    }
+    
+    /// xib实例化边框颜色
+    @IBInspectable var borderColor: UIColor {
+        get {
+            return UIColor(cgColor: layer.borderColor!)
+        }
+        set {
+            layer.borderColor = newValue.cgColor
+        }
+    }
+    
     /// 创建UIView
     ///
     /// - Parameters:
@@ -22,6 +55,10 @@ extension UIView {
         self.backgroundColor = kRGBColorFromHex(rgbValue: bgColor)
     }
     
+    
+    /// 获取当前的的控制器
+    ///
+    /// - Returns: 当前控制器
     func viewController()->UIViewController? {
 
         var nextResponder: UIResponder? = self

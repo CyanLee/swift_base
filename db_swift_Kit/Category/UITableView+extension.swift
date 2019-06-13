@@ -8,23 +8,27 @@
 
 import UIKit
 
+/// 暂时不知道这个key有什么用,也不知道为啥写外面
+//private var key: Void?
+
 extension UITableView {
     
-    
-    var tableViewHelper: TableViewHelper? {
-        set {
-            let key: UnsafeRawPointer! = UnsafeRawPointer.init(bitPattern: "key".hashValue)
-            objc_setAssociatedObject(self, key, newValue as AnyObject , .OBJC_ASSOCIATION_COPY_NONATOMIC)
-        }
-
-        get {
-            let key: UnsafeRawPointer! = UnsafeRawPointer.init(bitPattern: "key".hashValue)
-            let obj: TableViewHelper? = objc_getAssociatedObject(self, key) as? TableViewHelper
-            return obj
-        }
+    /// 使用 私 结构体 并设置静态变量属性 作为存储  private var key: Void?这种方法也行
+    struct tableViewHelperKeys {
+        static var helper: Void?
     }
     
-    
+    /// 通过runtime添加一个存储属性
+    /// TableViewHelper这个鬼就是tabbleView的一个中间件 所有tableView代理的相关方法都是经他的手
+    var tableViewHelper: TableViewHelper? {
+        get {
+            return (objc_getAssociatedObject(self, &tableViewHelperKeys.helper) as? TableViewHelper)
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &tableViewHelperKeys.helper, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+
     /// 创建UITableView
     ///
     /// - Parameters:
@@ -44,20 +48,15 @@ extension UITableView {
         self.tableFooterView = UIView()
     }
     
+    
+    /// 建立TableViewHelper与tableView之间的桥梁
+    ///
+    /// - Returns:  TableViewHelper本身
     func makeConfigureHelper() -> TableViewHelper {
         let helper = TableViewHelper.init(tableV: self)
         self.tableViewHelper = helper
         return self.tableViewHelper!
     }
-//
-//    func backg() -> TableViewHelper? {
-//        return objc_getAssociatedObject(self, "kBackgroundViewKey") as? TableViewHelper
-//    }
-//
-//    // 这里的UIView可以是可选类型，也可以不是可选类型
-//    func setBackg(backgroundView:TableViewHelper?)
-//    {
-//        objc_setAssociatedObject(self, "kBackgroundViewKey", backgroundView, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-//    }
+    
     
 }
