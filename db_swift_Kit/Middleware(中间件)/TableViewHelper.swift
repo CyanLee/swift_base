@@ -63,6 +63,10 @@ class TableViewHelper: NSObject,UITableViewDelegate,UITableViewDataSource {
     typealias DBFooterHeightBlock = (_ tableView: UITableView , _ section: Int) -> CGFloat
     var db_FooterHeightBlock : DBFooterHeightBlock?
     
+    /// cell的点击事件
+    typealias DBDidSelectRowAtBlock = (_ tableView:UITableView , _ indexPath: IndexPath) -> Void
+    var db_DidSelectRowAtBlock : DBDidSelectRowAtBlock?
+    
     
     deinit {
         print("没有循环引用")
@@ -150,6 +154,11 @@ class TableViewHelper: NSObject,UITableViewDelegate,UITableViewDataSource {
         return self
     }
     
+    func dealDidSelectRowAt(didSelectRowAtBlock: @escaping DBDidSelectRowAtBlock) -> TableViewHelper {
+        db_DidSelectRowAtBlock = didSelectRowAtBlock
+        return self
+    }
+    
     /// 写这个方法的原因 不想提示警告 所以写了一个不写返回值的方法
     func start() {
         tableView?.delegate = self
@@ -212,6 +221,10 @@ class TableViewHelper: NSObject,UITableViewDelegate,UITableViewDataSource {
         }else{
             return 0
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        db_DidSelectRowAtBlock!(tableView,indexPath)
     }
     
 }

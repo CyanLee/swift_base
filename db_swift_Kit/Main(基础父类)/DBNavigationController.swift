@@ -59,6 +59,20 @@ class DBNavigationController: UINavigationController {
         return self
     }
     
+    //设置导航栏的图片
+    func setupNaviBackground(imgName: String) -> DBNavigationController {
+        navigationBar.backgroundColor = UIColor.clear
+        navigationBar.barTintColor = UIColor.clear
+        navigationBar.setBackgroundImage(UIImage(named: imgName), for: .default)
+        if #available(iOS 9.0, *) {
+            navigationController?.navigationBar.subviews[0].subviews[0].isHidden = true;
+        } else {
+            navigationController?.navigationBar.subviews[0].subviews[1].isHidden = true;
+        }
+        return self
+    }
+    
+    
     /**
      * 统一所有控制器导航栏左上角的返回按钮
      * 让所有push进来的控制器，它的导航栏左上角的内容都一样
@@ -84,12 +98,12 @@ class DBNavigationController: UINavigationController {
         popViewController(animated: true)
     } 
 
-    //把十六进制的颜色转为Color(暂时放这)
-    func kRGBColorFromHex(rgbValue: Int) -> (UIColor) {
-        return UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16)) / 255.0,
-                       green: ((CGFloat)((rgbValue & 0xFF00) >> 8)) / 255.0,
-                       blue: ((CGFloat)(rgbValue & 0xFF)) / 255.0,
-                       alpha: 1.0)
-    }
+//    //把十六进制的颜色转为Color(暂时放这)
+//    func kRGBColorFromHex(rgbValue: Int) -> (UIColor) {
+//        return UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16)) / 255.0,
+//                       green: ((CGFloat)((rgbValue & 0xFF00) >> 8)) / 255.0,
+//                       blue: ((CGFloat)(rgbValue & 0xFF)) / 255.0,
+//                       alpha: 1.0)
+//    }
     
 }

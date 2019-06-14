@@ -8,8 +8,8 @@
 
 import UIKit
 
-class DBTabBarController: UITabBarController,UITabBarControllerDelegate {
-
+class DBTabBarController: UITabBarController,UITabBarControllerDelegate,DBMiddleTabBarDelegate {
+ 
     //tabbar选中状态的枚举
     enum DBTabBarItemStatus {
         case DBTabBarItemStatusSelected //选中状态
@@ -22,10 +22,34 @@ class DBTabBarController: UITabBarController,UITabBarControllerDelegate {
         // Do any additional setup after loading the view.
     }
     
-    //初始化（控制器名称数组）
+    /// 初始化方法
+    ///
+    /// - Parameters:
+    ///   - names: 控制器名称数组
+
     init(names:Array<String>) {
         super.init(nibName: nil, bundle: nil)
         delegate = self
+        configChildControllerWithNames(names: names)
+    }
+    
+    /// 初始化方法(带自定义tabar)
+    ///
+    /// - Parameters:
+    ///   - names: 控制器名称数组
+    ///   - fifth: 是否显示第五个tabbar(自定义大大的)
+    ///   - fifthImgName: 第五个tabbar的图片
+    init(names:Array<String>,fifth:Bool,fifthImgName:String) {
+        super.init(nibName: nil, bundle: nil)
+        delegate = self
+        
+        if fifth == true {
+            let tab = DBMiddleTabBarView()
+            tab.imgName = fifthImgName
+            tab.addDelegate = self
+            self.setValue(tab, forKey: "tabBar")
+        }
+        
         configChildControllerWithNames(names: names)
     }
     
@@ -134,13 +158,18 @@ class DBTabBarController: UITabBarController,UITabBarControllerDelegate {
         return true
     }
     
-    //把十六进制的颜色转为Color(暂时放这)
-    func kRGBColorFromHex(rgbValue: Int) -> (UIColor) {
-        return UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16)) / 255.0,
-                       green: ((CGFloat)((rgbValue & 0xFF00) >> 8)) / 255.0,
-                       blue: ((CGFloat)(rgbValue & 0xFF)) / 255.0,
-                       alpha: 1.0)
+    
+    func addClick() {
+        
     }
+    
+//    //把十六进制的颜色转为Color(暂时放这)
+//    func kRGBColorFromHex(rgbValue: Int) -> (UIColor) {
+//        return UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16)) / 255.0,
+//                       green: ((CGFloat)((rgbValue & 0xFF00) >> 8)) / 255.0,
+//                       blue: ((CGFloat)(rgbValue & 0xFF)) / 255.0,
+//                       alpha: 1.0)
+//    }
     
     
 

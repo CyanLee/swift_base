@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let bar = DBTabBarController.init(names: ["AViewController","BViewController"]).setupItemTitles(titles: ["A","B"]).setupItemsTitleDefaultColor(color: 0x000000).setupItemsTitleSelectedColor(color: 0xFFDD01).setUpUnSelectImages(images: ["home_icon_nor","home_icon_nor"]).setUpSelectImages(images: ["home_icon_sel","home_icon_sel"])
+        let bar = DBTabBarController.init(names: ["AViewController","BViewController","AViewController","BViewController"]).setupItemTitles(titles: ["A","B","A","B"]).setupItemsTitleDefaultColor(color: 0x000000).setupItemsTitleSelectedColor(color: 0xFFDD01).setUpUnSelectImages(images: ["home_icon_nor","home_icon_nor","home_icon_nor","home_icon_nor"]).setUpSelectImages(images: ["home_icon_sel","home_icon_sel","home_icon_sel","home_icon_sel"])
 //        let navi = DBNavigationController();
 //        navi.setViewControllers([AViewController(),BViewController()], animated: true)
         self.window?.rootViewController = bar
