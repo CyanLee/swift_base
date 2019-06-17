@@ -18,7 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let bar = DBTabBarController.init(names: ["AViewController","BViewController","AViewController","BViewController"]).setupItemTitles(titles: ["A","B","A","B"]).setupItemsTitleDefaultColor(color: 0x000000).setupItemsTitleSelectedColor(color: 0xFFDD01).setUpUnSelectImages(images: ["home_icon_nor","home_icon_nor","home_icon_nor","home_icon_nor"]).setUpSelectImages(images: ["home_icon_sel","home_icon_sel","home_icon_sel","home_icon_sel"])
 //        let navi = DBNavigationController();
 //        navi.setViewControllers([AViewController(),BViewController()], animated: true)
-        self.window?.rootViewController = bar
+        
+        
+        let welcome = DBWelcomeViewController.init(names: ["http://img3.dob500.cn/2019/03/14/201903141526439779.jpg","http://img3.dob500.cn/2019/03/14/201903141537226848.jpg","http://img3.dob500.cn/2019/03/14/201903141527451426.jpg"], isurl: true)
+//        let welcome = DBWelcomeViewController.init(names: ["http://img3.dianhuohuo.shop/images/e9f7d91a009eed04578bddceb337b791.gif","http://img3.dianhuohuo.shop/images/e9f7d91a009eed04578bddceb337b791.gif","http://img3.dianhuohuo.shop/images/e9f7d91a009eed04578bddceb337b791.gif"], isurl: true)
+//        let welcome = DBWelcomeViewController.init(names: ["welcome_1.jpg","welcome_2.jpg","welcome_3.jpg"], isurl: false)
+//        let welcome = DBWelcomeViewController.init(names: ["guideImage6.gif","guideImage7.gif","guideImage8.gif"], isurl: false)
+        self.window?.rootViewController = welcome
         
         
         // Override point for customization after application launch.
