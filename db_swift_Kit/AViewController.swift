@@ -28,6 +28,7 @@ class AViewController: DBBaseViewController,DBPopDataDelegate {
     
     func obtainPopData(popData: Any?) {
         print(popData as Any)
+        print("hahaha")
     }
     
     /*
