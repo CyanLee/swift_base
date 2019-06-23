@@ -224,7 +224,8 @@ class TableViewHelper: NSObject,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        db_DidSelectRowAtBlock!(tableView,indexPath)
+        if ((db_DidSelectRowAtBlock) != nil) {
+            db_DidSelectRowAtBlock!(tableView,indexPath)
+        }
     }
-    
 }
