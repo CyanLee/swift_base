@@ -16,18 +16,24 @@ protocol DBMiddleTabBarDelegate:NSObjectProtocol {
 class DBMiddleTabBarView: UITabBar {
     
     /// 图片的名称
-    var imgName = ""
+    var imgName: String? {
+        //属性值变化(可百度swift getset didset willset)
+        didSet{
+            addButton.setBackgroundImage(UIImage.init(named: imgName ?? ""), for: .normal)
+        }
+    }
+    
+    
     
     weak var addDelegate: DBMiddleTabBarDelegate?
     
     private lazy var addButton:UIButton = {
         return UIButton()
     }()
-
+    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-        addButton.setBackgroundImage(UIImage.init(named: imgName), for: .normal)
         addButton.addTarget(self, action: #selector(DBMiddleTabBarView.addButtonClick), for: .touchUpInside)
         self.addSubview(addButton)
         /// tabbar设置背景色

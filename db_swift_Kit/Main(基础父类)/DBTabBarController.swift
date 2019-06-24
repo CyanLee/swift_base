@@ -44,7 +44,7 @@ class DBTabBarController: UITabBarController,UITabBarControllerDelegate,DBMiddle
         delegate = self
         
         if fifth == true {
-            let tab = DBMiddleTabBarView()
+            let tab = DBMiddleTabBarView.init(frame: .zero)
             tab.imgName = fifthImgName
             tab.addDelegate = self
             self.setValue(tab, forKey: "tabBar")
@@ -160,7 +160,7 @@ class DBTabBarController: UITabBarController,UITabBarControllerDelegate,DBMiddle
     
     
     func addClick() {
-        
+        print("我是中间")
     }
     
 //    //把十六进制的颜色转为Color(暂时放这)
