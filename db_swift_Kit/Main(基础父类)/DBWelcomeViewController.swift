@@ -4,7 +4,7 @@
 //
 //  Created by 管家人 on 2019/6/14.
 //  Copyright © 2019 cyan. All rights reserved.
-//
+//  欢迎页,包含本地网络 图片还gif
 
 import UIKit
 

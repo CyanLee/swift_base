@@ -22,7 +22,7 @@ class DBBaseViewController: UIViewController {
     var popData : Any? = nil
     
     //反向传值代理
-    weak var delegate: DBPopDataDelegate?
+    weak var popdelegate: DBPopDataDelegate?
     //反向传值闭包  暂时没有,写框架,感觉代理比较方便
 //    var popDataBlock:((_ popData:Any?) -> Void)?
     

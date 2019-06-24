@@ -31,6 +31,7 @@
 		8725A2AB22B79172000EFC73 /* welcome01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8725A2A922B79172000EFC73 /* welcome01@2x.png */; };
 		8725A2AD22B7918B000EFC73 /* welcome02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8725A2AC22B7918B000EFC73 /* welcome02@2x.png */; };
 		8725A2AF22B791AE000EFC73 /* welcome03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8725A2AE22B791AE000EFC73 /* welcome03@2x.png */; };
+		87AE655122C0725900053CBC /* DBWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE655022C0725900053CBC /* DBWebViewController.swift */; };
 		87ED6F3B22ADDAC4009647C9 /* DBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED6F3722ADDAC4009647C9 /* DBNavigationController.swift */; };
 		87ED6F3C22ADDAC4009647C9 /* DBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED6F3822ADDAC4009647C9 /* DBTabBarController.swift */; };
 		87ED6F3D22ADDAC4009647C9 /* DBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED6F3922ADDAC4009647C9 /* DBBaseViewController.swift */; };
@@ -65,6 +66,7 @@
 		8725A2A922B79172000EFC73 /* welcome01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome01@2x.png"; sourceTree = "<group>"; };
 		8725A2AC22B7918B000EFC73 /* welcome02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome02@2x.png"; sourceTree = "<group>"; };
 		8725A2AE22B791AE000EFC73 /* welcome03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome03@2x.png"; sourceTree = "<group>"; };
+		87AE655022C0725900053CBC /* DBWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBWebViewController.swift; sourceTree = "<group>"; };
 		87ED6F3722ADDAC4009647C9 /* DBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBNavigationController.swift; sourceTree = "<group>"; };
 		87ED6F3822ADDAC4009647C9 /* DBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBTabBarController.swift; sourceTree = "<group>"; };
 		87ED6F3922ADDAC4009647C9 /* DBBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBBaseViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				87ED6F3822ADDAC4009647C9 /* DBTabBarController.swift */,
 				87ED6F3922ADDAC4009647C9 /* DBBaseViewController.swift */,
 				8718D6F422B3A5C2001F8712 /* DBWelcomeViewController.swift */,
+				87AE655022C0725900053CBC /* DBWebViewController.swift */,
 			);
 			path = "Main(基础父类)";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				180B4A4F22A973DF00399C14 /* CViewController.swift in Sources */,
 				87ED6F3F22ADDAF5009647C9 /* EquipmentInfoTools.swift in Sources */,
 				180B4A3122A209C200399C14 /* ViewController.swift in Sources */,
+				87AE655122C0725900053CBC /* DBWebViewController.swift in Sources */,
 				871D7D3D22B0D3C4009633BF /* UILabel+extension.swift in Sources */,
 				87ED6F3D22ADDAC4009647C9 /* DBBaseViewController.swift in Sources */,
 				8718D6F222B39EFB001F8712 /* UIImage+extension.swift in Sources */,

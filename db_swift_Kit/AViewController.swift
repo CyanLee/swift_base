@@ -21,7 +21,7 @@ class AViewController: DBBaseViewController,DBPopDataDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let b = DBWelcomeViewController.init(names: ["welcome_1.png","welcome_2.png","welcome_3.png"])
 //        let b = DBWelcomeViewController.init(names: ["http://img3.dob500.cn/2019/03/14/201903141526439779.jpg","http://img3.dob500.cn/2019/03/14/201903141537226848.jpg","http://img3.dob500.cn/2019/03/14/201903141527451426.jpg"], isurl: true)
-        b.delegate = self
+        b.popdelegate = self
         self.navigationController?.pushViewController(b, animated: true)
 //        pushClass(className: "BViewController", data: "钊哥要找工作了")
     }
