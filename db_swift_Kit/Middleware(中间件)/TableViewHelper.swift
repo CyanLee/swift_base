@@ -13,18 +13,6 @@ class TableViewHelper: NSObject,UITableViewDelegate,UITableViewDataSource {
     //创建一个tableView
     var tableView : UITableView? = nil
     
-    //创建
-    
-//    1 //定义闭包类型 (就是一个函数类型)
-//    2 typealias MyClosureType = (Int, Int) -> Int
-//    3 var myCloure:MyClosureType?
-//    typedef UITableViewCell* (^WMZCellCallBlock)(NSIndexPath *indexPath,UITableView* tableView,id model);
-    
-    //    let dealCell = { (cellBlock: WMZCellCallBlock) -> TableViewHelper in
-    //        return
-    //    }
-    
-    
     /*
         这里是运用了block的传值和回调
         声明一个block是用来进行 内到外 的回调
@@ -74,11 +62,8 @@ class TableViewHelper: NSObject,UITableViewDelegate,UITableViewDataSource {
     
     init(tableV: UITableView) {
         super.init()
-//        tableV.delegate = self
-//        tableV.dataSource = self
         tableView = tableV
     }
-    
     
     /// section个数的回调block(外部->内部)
     ///

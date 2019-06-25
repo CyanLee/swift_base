@@ -31,6 +31,7 @@
 		8725A2AB22B79172000EFC73 /* welcome01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8725A2A922B79172000EFC73 /* welcome01@2x.png */; };
 		8725A2AD22B7918B000EFC73 /* welcome02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8725A2AC22B7918B000EFC73 /* welcome02@2x.png */; };
 		8725A2AF22B791AE000EFC73 /* welcome03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8725A2AE22B791AE000EFC73 /* welcome03@2x.png */; };
+		8789C2CC22C2103D0097FAB5 /* CollectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C2CB22C2103D0097FAB5 /* CollectionHelper.swift */; };
 		87AE655122C0725900053CBC /* DBWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE655022C0725900053CBC /* DBWebViewController.swift */; };
 		87ED6F3B22ADDAC4009647C9 /* DBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED6F3722ADDAC4009647C9 /* DBNavigationController.swift */; };
 		87ED6F3C22ADDAC4009647C9 /* DBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED6F3822ADDAC4009647C9 /* DBTabBarController.swift */; };
@@ -66,6 +67,7 @@
 		8725A2A922B79172000EFC73 /* welcome01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome01@2x.png"; sourceTree = "<group>"; };
 		8725A2AC22B7918B000EFC73 /* welcome02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome02@2x.png"; sourceTree = "<group>"; };
 		8725A2AE22B791AE000EFC73 /* welcome03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome03@2x.png"; sourceTree = "<group>"; };
+		8789C2CB22C2103D0097FAB5 /* CollectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHelper.swift; sourceTree = "<group>"; };
 		87AE655022C0725900053CBC /* DBWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBWebViewController.swift; sourceTree = "<group>"; };
 		87ED6F3722ADDAC4009647C9 /* DBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBNavigationController.swift; sourceTree = "<group>"; };
 		87ED6F3822ADDAC4009647C9 /* DBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBTabBarController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				87ED6F4022AE04AB009647C9 /* TableViewHelper.swift */,
+				8789C2CB22C2103D0097FAB5 /* CollectionHelper.swift */,
 			);
 			name = "Middleware(中间件)";
 			path = "db_swift_Kit/Middleware(中间件)";
@@ -265,6 +268,7 @@
 				871D7D3E22B0D3C4009633BF /* UIView+extension.swift in Sources */,
 				8718D6F522B3A5C2001F8712 /* DBWelcomeViewController.swift in Sources */,
 				871D7D4122B0D3C4009633BF /* UIButton+extension.swift in Sources */,
+				8789C2CC22C2103D0097FAB5 /* CollectionHelper.swift in Sources */,
 				871D7D4422B0D485009633BF /* Const.swift in Sources */,
 				8718D6EE22B39CF6001F8712 /* DBMiddleTabBarView.swift in Sources */,
 				871D7D3C22B0D3C4009633BF /* UICollectionView+extension.swift in Sources */,
