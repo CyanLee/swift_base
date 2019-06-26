@@ -155,16 +155,25 @@ class TableViewHelper: NSObject,UITableViewDelegate,UITableViewDataSource {
         if (db_SectionIndexNumBlock != nil) {
             return db_SectionIndexNumBlock!(tableView)
         }else{
-            return 1
+            return 0
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return db_RowIndexNumBlock!(tableView,section)
+        if (db_RowIndexNumBlock != nil) {
+            return db_RowIndexNumBlock!(tableView,section)
+        }else{
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return db_CellCellBlock!(tableView,indexPath)
+        if (db_CellCellBlock != nil) {
+            return db_CellCellBlock!(tableView,indexPath)
+        }else{
+            return UITableViewCell()
+        }
+        
     }
     
     
@@ -209,7 +218,7 @@ class TableViewHelper: NSObject,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if ((db_DidSelectRowAtBlock) != nil) {
+        if (db_DidSelectRowAtBlock != nil) {
             db_DidSelectRowAtBlock!(tableView,indexPath)
         }
     }

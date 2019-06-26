@@ -10,6 +10,28 @@ import UIKit
 
 extension UICollectionView {
     
+    struct collectionHelperKeys {
+        static var helper: Void?
+    }
+    
+    var collectionHelper: CollectionHelper? {
+        get {
+            return (objc_getAssociatedObject(self, &collectionHelperKeys.helper) as? CollectionHelper)
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &collectionHelperKeys.helper, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+    
+    /// 建立CollectionHelper与collection之间的桥梁
+    /// - layout:   UICollectionViewFlowLayout
+    /// - Returns:  CollectionHelper本身
+    func makeConfigureHelper(layout: UICollectionViewFlowLayout) -> CollectionHelper {
+        let helper = CollectionHelper.init(collecView: self, layout: layout)
+        self.collectionHelper = helper
+        return self.collectionHelper!
+    }
+    
     /// 初始化 collectionView
     ///
     /// - Parameters:
